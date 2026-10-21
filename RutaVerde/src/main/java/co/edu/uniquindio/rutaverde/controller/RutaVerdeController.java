@@ -10,7 +10,7 @@ public class RutaVerdeController {
     private final Agencia agencia;
 
     public RutaVerdeController() {
-        // Usamos el patrón Singleton para la Agencia, como vimos en la solución anterior
+
         this.agencia = Agencia.getInstancia();
         cargarDatosPrueba();
     }
@@ -118,17 +118,16 @@ public class RutaVerdeController {
         }
 
         // 2. Lógica de negocio con CASIFICACIÓN (Type Casting)
-        // Verificamos si el producto seleccionado es específicamente una Actividad
+
         if (producto instanceof Actividad) {
-            // Transformamos temporalmente el Producto a Actividad
+
             Actividad actividad = (Actividad) producto;
 
-            // Ahora sí podemos usar los métodos específicos sin que marque error
+
             if (!actividad.hayCupoDisponible(fechaViaje, numeroViajeros)) {
                 throw new Exception("No hay suficiente cupo en esta actividad para la fecha seleccionada.");
             }
 
-            // Si hay cupo, lo reservamos
             actividad.reservarCupo(fechaViaje, numeroViajeros);
         }
 
@@ -154,7 +153,7 @@ public class RutaVerdeController {
             crearGuia("99002", "Laura Londoño", Arrays.asList("Español", "Francés"), "3109998877", 180000.0);
 
             // 3. Crear Actividades
-            // IMPORTANTE: Verifica que "MEDIO", "BAJO" y "ACTIVA" coincidan con los nombres exactos en tus Enums
+
             crearActividad("ACT-01", "Caminata Valle de Cocora", "Salento", 4, 50000.0, 20, NivelDificultad.valueOf("MEDIA"), EstadoActividad.valueOf("DISPONIBLE"));
             crearActividad("ACT-02", "Tour del Café Tradicional", "Buenavista", 3, 80000.0, 15, NivelDificultad.valueOf("BAJA"), EstadoActividad.valueOf("DISPONIBLE"));
             crearActividad("ACT-03", "Balsaje Río La Vieja", "Quimbaya", 6, 120000.0, 10, NivelDificultad.valueOf("MEDIA"), EstadoActividad.valueOf("DISPONIBLE"));

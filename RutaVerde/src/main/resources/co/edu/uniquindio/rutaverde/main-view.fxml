@@ -184,7 +184,7 @@
                   <Font name="System Italic" size="24.0" />
                 </font>
               </Label>
-              <Label text="Aquí puedes agregar Tablas (TableView) para Clientes, Guías y Paquetes." textFill="#9e9e9e" />
+              <Label text="Tablas (TableView) para Clientes, Guías y Paquetes." textFill="#9e9e9e" />
             </VBox>
           </content>
         </Tab>
